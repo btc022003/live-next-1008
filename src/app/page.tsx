@@ -1,91 +1,61 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+// 这个页面中的代码是服务器端代码
+import React from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
+type IPerson = {
+  name: string;
+  desc: string;
+};
 
-export default function Home() {
+// 组件可以直白的理解为就是一个自定义标签
+// 组件就是一个function函数
+// 建议组建名字都大写
+//  每一个组件都需要一个返回值
+//  返回的是当前组件需要展示的dom元素
+const Person = (props: IPerson) => {
+  // const person = {
+  //   name: '那维莱特',
+  //   desc: '水龙王，目前最强的输出。单人成队',
+  // };
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className='person'>
+      <h1>{props.name}</h1>
+      <p>{props.desc}</p>
+    </div>
+  );
+};
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+function Home() {
+  const list = [1, 2, 3, 4, 5];
+  const tags = [
+    <h2 key={11}>这是一个二级标题</h2>,
+    <p key={22}>这是一个段落</p>,
+  ];
+  // jsx语法
+  // 样式名字的关键词需要使用className
+  // style属性的写法比较特殊
+  return (
+    <div className='home'>
+      <h1 style={{ color: 'white', backgroundColor: 'goldenrod' }}>
+        这是一个首页
+      </h1>
+      <p>这段代码是服务器直接生成的内容</p>
+      <ul>
+        {list.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <hr />
+      {tags}
+      <hr />
+      {list.length > 0 ? (
+        <span>数组中存在数据</span>
+      ) : (
+        <span>数组中没有数据</span>
+      )}
+      <Person name='刻晴' desc='黑丝猫耳，很强' />
+      <Person name='行秋' desc='六星水神' />
+    </div>
+  );
 }
+
+export default Home;
