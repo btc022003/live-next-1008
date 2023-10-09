@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body>
+      <body suppressHydrationWarning={true}>
         <Link href='/'>【首页】</Link>
         <Link href='/about'>【关于】</Link>
         <hr />
