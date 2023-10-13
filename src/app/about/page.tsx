@@ -6,6 +6,7 @@ import RefDemo from './_components/ref-demo';
 import UseMemoDemo from './_components/use-memo-demo';
 import CallbackDemo from './_components/callback-demo';
 import UseContextDemo from './_components/use-context-demo';
+import UseReducerDemo from './_components/use-reducer-demo';
 
 function About() {
   return (
@@ -16,7 +17,8 @@ function About() {
       {/* <RefDemo /> */}
       {/* <UseMemoDemo /> */}
       {/* <CallbackDemo /> */}
-      <UseContextDemo />
+      {/* <UseContextDemo /> */}
+      <UseReducerDemo />
     </div>
   );
 }
