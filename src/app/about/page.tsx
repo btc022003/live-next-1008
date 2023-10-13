@@ -5,6 +5,7 @@ import EffectDemo from './_components/effect-demo';
 import RefDemo from './_components/ref-demo';
 import UseMemoDemo from './_components/use-memo-demo';
 import CallbackDemo from './_components/callback-demo';
+import UseContextDemo from './_components/use-context-demo';
 
 function About() {
   return (
@@ -14,7 +15,8 @@ function About() {
       {/* <EffectDemo /> */}
       {/* <RefDemo /> */}
       {/* <UseMemoDemo /> */}
-      <CallbackDemo />
+      {/* <CallbackDemo /> */}
+      <UseContextDemo />
     </div>
   );
 }

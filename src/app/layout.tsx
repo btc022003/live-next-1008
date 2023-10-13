@@ -1,6 +1,7 @@
 // 这个页面是母版页，所有的字页面都会嵌套在这个页面中
 import Link from 'next/link';
 import './globals.css';
+import AppProvider from './_component/app-provider';
 
 // 最终会生成在head标签中，作用是生成SEO相关的数据
 export const metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
         <Link href='/'>【首页】</Link>
         <Link href='/about'>【关于】</Link>
         <hr />
-        {children}
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
