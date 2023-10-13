@@ -1,6 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .person {
   padding: 12px;
   background-color: deeppink;
   color: white;
   margin: 8px 0;
+}
+
+@layer components {
+  .btn {
+    @apply bg-rose-600 text-rose-100 py-2 px-4 rounded
+  }
 }

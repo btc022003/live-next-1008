@@ -34,6 +34,7 @@ function UseReducerDemo() {
     <div>
       <h1>{state.title}</h1>
       <button
+        className='btn hover:bg-rose-800'
         onClick={() => {
           // dispatch接收一个对象作为参数
           //  会触发reducer函数执行
